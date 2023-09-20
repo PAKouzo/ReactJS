@@ -1,12 +1,17 @@
+import React from 'react'
 import { useState } from 'react'
 import './App.css'
-import Title from './components/Title'
-function App() {
+
+const App = () => {
+  const [count, setCount] = useState(1)
+  const handleClick = () =>{
+    setCount(count+1)
+  }
   return (
     <div>
-      <Title title="hi"></Title>
-      <Title des="Props"></Title>
-      <Title color="red"></Title>
+      {count}
+      <br />
+      <button onClick={handleClick}>Click</button>
     </div>
   )
 }
