@@ -1,0 +1,21 @@
+*{
+    box-sizing: none;
+    padding: 0;
+    margin: 0;
+}
+.navlinks{
+    width: 100%;
+    background-color: rgb(171, 3, 3);
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px;
+}
+.navlinks a{
+    color: white;
+    /* transition: all .2s linear; */
+    text-decoration: none;
+}
+.navlinks a:hover{
+    color: aqua;
+}
