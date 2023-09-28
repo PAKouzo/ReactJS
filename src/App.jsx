@@ -1,25 +1,22 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState , useRef} from 'react'
 import './App.css'
 import axios from 'axios'
 
+
 const App = () => {
-  const [count, setCount] = useState(1)
-  const handleClick = () =>{
-    setCount(count+1)
-  }
-  const handleFetchPokemon = async () =>{
-    const response = await axios.get('https://pokeapi.co/api/v2/pokemon');
-    console.log(response)
-  }
-  return (
-    <div>
-      {count}
-      <br />
-      <button onClick={handleClick}>Click</button>
-      <button onClick={handleFetchPokemon}>Click</button>
-    </div>
-  )
+    const inputRef = useRef(null)
+  
+    const handleFocus = () => {
+      inputRef.current.focus()
+    }
+  
+    return (
+      <div>
+        <input ref={inputRef} type="text" />
+        <button onClick={handleFocus}>Focus</button>
+      </div>
+    )
 }
 
 export default App
